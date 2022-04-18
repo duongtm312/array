@@ -4,11 +4,43 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body onload="docReady()">
 <input type="text" id="in">Nhập
-<input type="button" onclick="" value="Tìm">
 <h3 id="out"></h3>
 <script>
+    let vn = ["Xin chào", "Tạm biệt", "Đồng ý", "Không đồng ý"];
+    let eng = ["Hello", "Goodbye", "Yes", "No"];
+    let check = ""
+    let a = ""
+
+    function test() {
+        a = false;
+        check = document.getElementById("in").value;
+        let i = 0
+        for (; i < vn.length; i++) {
+            if (eng[i].toUpperCase() == check.toUpperCase()) {
+                a = true;
+                break;
+            }
+        }
+        ;
+        if (a) {
+            document.getElementById("out").innerHTML = vn[i]
+        } else {
+            document.getElementById("out").innerHTML = "Không tìm thấy"
+        }
+    }
+
+    function enter(evt) {
+        if (evt.keyCode == "13") {
+            test()
+        }
+
+
+    }
+    function docReady() {
+        window.addEventListener('keydown', enter);
+    }
 
 </script>
 </body>
