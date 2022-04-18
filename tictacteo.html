@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3 align="center">Caro Game Simple</h3>
+<p id="carogame" />
+<br/><br/><input type='button' value='X' onclick='changeValuex()'>
+<br/><br/><input type='button' value='0' onclick='changeValue0()'>
+</body>
+
+<script>
+    let b = document.getElementById("carogame");
+
+    let board = [];
+    let data = "<table border='1'   align='center' ><tr> ";
+    for (let i = 0; i < 10; i++) {
+        board[i] = new Array("", "","","","","","","","","git");
+    }
+
+    for (let i = 0; i < 10; i++) {
+        data += "<tr>";
+        for (let j = 0; j < 10; j++) {
+            data += `<td width='50px' height='50px' onclick='changeValuex(${i},${j})'> ${board[i][j]} </td>`;
+        }data+= "</tr>"
+    }
+
+    b.innerHTML = data;
+    let check = true;
+    function changeValuex(i,j) {
+
+        let data = "<table border='1'   align='center' ><tr> ";
+        if (check){
+            board[i][j] = "X";
+            check = false;
+        } else {
+            board[i][j] = "O";
+            check = true;
+        }
+        for (let i = 0; i < 10; i++) {
+            data += "<tr>";
+            for (let j = 0; j < 10; j++) {
+                data += `<td width='50px' height='50px' onclick='changeValuex(${i},${j})'> ${board[i][j]} </td>`;
+            }data+= "</tr>"
+        }
+
+        b.innerHTML = "<hr/>" + data;
+    }
+
+</script>
+</html>
