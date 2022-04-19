@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let v=prompt("Nhập số")
+  var matrix = [0,1,2,3,4,5,6,7,8,9]
+  let check=false;
+  let i = 0;
+  for (; i < matrix.length; i++) {
+    if (matrix[i]==v){
+      check=true
+      break;
+    }
+  }
+  if (check){
+    console.log("V is in the array")
+    for (let j = i; j <matrix.length ; j++) {
+      matrix[j]=matrix[j+1];
+
+    }
+    matrix.pop()
+    console.log(matrix)
+  }else {
+    console.log("V is not in the array")
+    console.log(matrix)
+  }
+</script>
+</body>
+</html>

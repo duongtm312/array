@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  var matrix = new Array(10);
+  for (var row = 0; row < matrix.length; row++) {
+    matrix[row] = Math.floor((Math.random() * 100) + 1);
+  }
+  console.log(matrix)
+  let max=0;
+  let check=0;
+  for (let i = 0; i < matrix.length; i++) {
+      if (matrix[i]>max){
+          max=matrix[i];
+          check=i;
+      }
+
+  }
+  console.log("Số lớn nhất là:",max,"Tại vị trí",check)
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let v=prompt("Nhập số")
+  var matrix = new Array(10);
+  for (var row = 0; row < matrix.length; row++) {
+    matrix[row] = Math.floor((Math.random() * 100) + 1);
+
+  }
+  console.log(matrix)
+  let check=false;
+  for (let i = 0; i < matrix.length; i++) {
+    if (matrix[i]==v){
+      check=true
+      break;
+    }
+  }
+  if (check){
+    console.log("V is in the array")
+  }else {
+    console.log("V is not in the array")
+  }
+</script>
+</body>
+</html>
